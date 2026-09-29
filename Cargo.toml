@@ -1,0 +1,103 @@
+[package]
+name = "easy_callback"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+keywords = ["teloxide", "telegram", "callback", "encoding", "derive"]
+categories = ["api-bindings", "encoding"]
+description = "Automatic callback data encoding for teloxide"
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/easy_callback"
+readme = "README.md"
+exclude = [".github", ".gitignore"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+doctest = false
+
+[dependencies]
+easy_callback_derive = { workspace = true }
+easy_callback_core = { workspace = true }
+
+[dev-dependencies]
+teloxide = { workspace = true }
+serde = { workspace = true }
+rkyv = { workspace = true }
+wincode = { workspace = true, features = ["derive"] }
+bitcode = { workspace = true, features = ["derive"] }
+easy_callback = { path = ".", features = [
+    "rkyv",
+    "wincode",
+    "postcard",
+    "bitcode",
+    "rmp",
+    "ciborium",
+] }
+
+[features]
+rkyv = [
+    "easy_callback_derive/rkyv",
+    "easy_callback_core/rkyv",
+]
+wincode = [
+    "easy_callback_derive/wincode",
+    "easy_callback_core/wincode",
+]
+postcard = [
+    "easy_callback_derive/postcard",
+    "easy_callback_core/postcard",
+]
+bitcode = [
+    "easy_callback_derive/bitcode",
+    "easy_callback_core/bitcode",
+]
+rmp = [
+    "easy_callback_derive/rmp",
+    "easy_callback_core/rmp",
+]
+ciborium = [
+    "easy_callback_derive/ciborium",
+    "easy_callback_core/ciborium",
+]
+
+[workspace]
+resolver = "3"
+members = [
+    "crates/easy_callback_derive",
+    "crates/easy_callback_core",
+    "examples/*",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.85.0"
+authors = ["Ivan Sarnitskii <ivan.sarnitskiy@mail.ru>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ZenKerr/easy_callback"
+homepage = "https://crates.io/crates/easy_callback"
+
+[workspace.dependencies]
+tokio = { version = "1.53.2", default-features = false }
+paste = { version = "1.0.15", default-features = false }
+base64 = {version = "0.23.1", default-features = false}
+syn = { version = "3.0.6", default-features = false }
+quote = { version = "1.0.47", default-features = false }
+proc-macro2 = { version = "1.0.107", default-features = false }
+proc-macro-crate = { version = "3.5.0", default-features = false }
+teloxide = { version = "0.17.0", default-features = false }
+serde = { version = "1.0.229", default-features = false }
+rkyv = { version = "0.8.18", default-features = false }
+wincode = { version = "0.6.2", default-features = false }
+postcard = { version = "1.1.3", default-features = false}
+bitcode = { version = "0.6.9", default-features = false }
+rmp-serde = { version = "1.3.1", default-features = false }
+ciborium = { version = "0.2.2", default-features = false }
+easy_callback_derive = { version = "1.0.0", path = "crates/easy_callback_derive" }
+easy_callback_core = { version = "1.0.0", path = "crates/easy_callback_core" }

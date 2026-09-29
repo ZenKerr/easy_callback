@@ -1,0 +1,11 @@
+[package]
+name = "count_bot"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+tokio = { workspace = true, features = ["macros"] }
+teloxide = { workspace = true, features = ["ctrlc_handler", "macros"] }
+serde = { workspace = true }
+easy_callback = { path = "../../", features = ["postcard"] }

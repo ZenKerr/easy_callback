@@ -1,0 +1,63 @@
+[package]
+name = "easy_callback_core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Internal implementation crate for easy_callback"
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/easy_callback_core"
+readme = "README.md"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[lib]
+doctest = false
+
+[dependencies]
+teloxide = { workspace = true, optional = true }
+base64 = { workspace = true, features = ["simd-unsafe"], optional = true }
+serde = { workspace = true, optional = true }
+rkyv = { workspace = true, features = ["alloc", "bytecheck"], optional = true }
+wincode = { workspace = true, features = ["alloc"], optional = true }
+postcard = { workspace = true, features = ["use-std"], optional = true }
+bitcode = { workspace = true, optional = true }
+rmp-serde = { workspace = true, optional = true }
+ciborium = { workspace = true, optional = true }
+
+[features]
+_any_feature = [
+    "dep:teloxide",
+    "dep:base64",
+]
+rkyv = [
+    "dep:rkyv",
+    "_any_feature",
+]
+wincode = [
+    "dep:wincode",
+    "_any_feature",
+]
+postcard = [
+    "dep:postcard",
+    "dep:serde",
+    "_any_feature",
+]
+bitcode = [
+    "dep:bitcode",
+    "_any_feature",
+]
+rmp = [
+    "dep:rmp-serde",
+    "dep:serde",
+    "_any_feature",
+]
+ciborium = [
+    "dep:ciborium",
+    "dep:serde",
+    "_any_feature",
+]
