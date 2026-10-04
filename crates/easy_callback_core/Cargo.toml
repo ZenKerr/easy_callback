@@ -19,7 +19,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 doctest = false
 
 [dependencies]
-teloxide = { workspace = true, optional = true }
+teloxide = { workspace = true }
 base64 = { workspace = true, features = ["simd-unsafe"], optional = true }
 serde = { workspace = true, optional = true }
 rkyv = { workspace = true, features = ["alloc", "bytecheck"], optional = true }
@@ -30,10 +30,7 @@ rmp-serde = { workspace = true, optional = true }
 ciborium = { workspace = true, optional = true }
 
 [features]
-_any_feature = [
-    "dep:teloxide",
-    "dep:base64",
-]
+_any_feature = ["dep:base64"]
 rkyv = [
     "dep:rkyv",
     "_any_feature",
