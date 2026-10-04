@@ -63,7 +63,7 @@ choosing one or more features corresponding to the implementations you want to u
 
 ```toml
 [dependencies]
-easy_callback = { version = "1.0.0", features=["postcard"] }
+easy_callback = { version = "1.0.1", features=["postcard"] }
 ```
 
 Available implementations:
