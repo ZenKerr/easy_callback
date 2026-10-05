@@ -7,9 +7,14 @@
 
 Automatic callback data encoding for teloxide.
 
-This crate provides a derive macro for quickly implementing conversions
-between `CallbackQuery` and a custom user-defined type, with support
-for different encoder implementations.
+This crate provides a derive macro for quickly converting a custom
+user-defined type to a callback data string and converting a `CallbackQuery`
+back into the corresponding user-defined type, with support for different
+serialization implementations.
+
+When encoding, the data is first serialized using the selected
+implementation and then encoded as a URL-safe, unpadded Base64 string.
+During decoding, the process is reversed.
 
 ---
 
