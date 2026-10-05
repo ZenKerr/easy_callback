@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Added `borsh` implementation
+
 ## 1.0.1
 
 * Made `AbstractCallback` and `FALLBACK` available without requiring feature selection
