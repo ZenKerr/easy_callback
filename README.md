@@ -38,21 +38,30 @@ enum Callback {
 // ...
 
 fn keyboard(value: i64) -> InlineKeyboardMarkup {
-    // The callback is automatically encoded using postcard
-    InlineKeyboardMarkup::new([[
-        InlineKeyboardButton::callback("+1", Callback::Increment(value)),
-        InlineKeyboardButton::callback("-1", Callback::Decrement(value)),
-    ]])
+  // The callback is automatically encoded using postcard
+  InlineKeyboardMarkup::new([[
+    InlineKeyboardButton::callback(
+      "+1",
+      Callback::Increment(value),
+    ),
+    InlineKeyboardButton::callback(
+      "-1",
+      Callback::Decrement(value),
+    ),
+  ]])
 }
 
 // ...
 
-async fn on_callback(bot: Bot, callback_query: CallbackQuery) -> ResponseResult<()> {
+async fn on_callback(
+  bot: Bot,
+  callback_query: CallbackQuery,
+) -> ResponseResult<()> {
   // ...
 
   // Decode the callback query into the Callback enum
   let callback = Callback::from(callback_query);
-  
+
   // ...
 }
 
@@ -68,10 +77,11 @@ choosing one or more features corresponding to the implementations you want to u
 
 ```toml
 [dependencies]
-easy_callback = { version = "1.1.0", features=["postcard"] }
+easy_callback = { version = "1.1.0", features = ["postcard"] }
 ```
 
 Available implementations:
+
 * [rkyv](https://crates.io/crates/rkyv)
 * [wincode](https://crates.io/crates/wincode)
 * [postcard](https://crates.io/crates/postcard)
@@ -82,6 +92,42 @@ Available implementations:
 * [speedy](https://crates.io/crates/speedy)
 
 Multiple implementations can be enabled simultaneously if required.
+
+---
+
+## Implementation Size Comparison
+
+Since Telegram limits callback data to 64 bytes, keeping the serialized representation compact is important.
+
+A comparison of serialized sizes is available in the
+[comparison](https://github.com/ZenKerr/easy_callback/blob/HEAD/examples/comparison.rs) example.
+
+The following enum was used for benchmarking:
+
+```rust
+#[repr(u8)]
+enum Callback {
+  Action {
+    id: i64, // 1234
+    value: f32, // 1.234
+  },
+  #[default]
+  Fallback,
+}
+```
+
+The results below are measured in bytes after Base64 encoding:
+
+| Implementation | Action Size | Fallback Size |
+|----------------|-------------|---------------|
+| rkyv           | 32          | 32            |
+| wincode        | 22          | 6             |
+| postcard       | 10          | 2             |
+| bitcode        | 11          | 2             |
+| rmp            | 23          | 12            |
+| ciborium       | 35          | 12            |
+| borsh          | 18          | 2             |
+| speedy         | 22          | 6             |
 
 ---
 
