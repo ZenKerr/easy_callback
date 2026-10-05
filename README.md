@@ -21,7 +21,7 @@ During decoding, the process is reversed.
 ## Example
 
 This example demonstrates the library's functionality using the
-[count_bot](https://github.com/ZenKerr/easy_callback/blob/HEAD/examples/count_bot/src/main.rs) example.
+[count_bot](https://github.com/ZenKerr/easy_callback/blob/HEAD/examples/count_bot.rs) example.
 
 ```rust
 // ...
