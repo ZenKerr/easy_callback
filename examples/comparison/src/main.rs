@@ -1,8 +1,8 @@
 use easy_callback::{
     core::AbstractCallback,
     derive::{
-        BitcodeCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
-        WincodeCallback,
+        BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback,
+        RmpCallback, WincodeCallback,
     },
 };
 
@@ -81,5 +81,13 @@ fn main() {
     implementation!(
         ciborium,
         [serde::Serialize, serde::Deserialize, CiboriumCallback],
+    );
+    implementation!(
+        borsh,
+        [
+            borsh::BorshSerialize,
+            borsh::BorshDeserialize,
+            BorshCallback
+        ],
     );
 }

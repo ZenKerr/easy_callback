@@ -31,6 +31,7 @@ serde = { workspace = true }
 rkyv = { workspace = true }
 wincode = { workspace = true, features = ["derive"] }
 bitcode = { workspace = true, features = ["derive"] }
+borsh = { workspace = true, features = ["derive"] }
 easy_callback = { path = ".", features = [
     "rkyv",
     "wincode",
@@ -38,6 +39,7 @@ easy_callback = { path = ".", features = [
     "bitcode",
     "rmp",
     "ciborium",
+    "borsh",
 ] }
 
 [features]
@@ -64,6 +66,10 @@ rmp = [
 ciborium = [
     "easy_callback_derive/ciborium",
     "easy_callback_core/ciborium",
+]
+borsh = [
+    "easy_callback_derive/borsh",
+    "easy_callback_core/borsh",
 ]
 
 [workspace]
@@ -99,5 +105,6 @@ postcard = { version = "1.1.3", default-features = false }
 bitcode = { version = "0.6.9", default-features = false }
 rmp-serde = { version = "1.3.1", default-features = false }
 ciborium = { version = "0.2.2", default-features = false }
+borsh = { version = "1.8.1", default-features = false }
 easy_callback_derive = { version = "1.0.1", path = "crates/easy_callback_derive" }
 easy_callback_core = { version = "1.0.1", path = "crates/easy_callback_core" }

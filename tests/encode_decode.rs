@@ -1,5 +1,6 @@
 use easy_callback_derive::{
-    BitcodeCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback, WincodeCallback,
+    BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
+    WincodeCallback,
 };
 use teloxide::types::{CallbackQuery, CallbackQueryId, User, UserId};
 
@@ -70,4 +71,12 @@ check_implementation!(rmp, [serde::Serialize, serde::Deserialize, RmpCallback]);
 check_implementation!(
     ciborium,
     [serde::Serialize, serde::Deserialize, CiboriumCallback],
+);
+check_implementation!(
+    borsh,
+    [
+        borsh::BorshSerialize,
+        borsh::BorshDeserialize,
+        BorshCallback,
+    ],
 );

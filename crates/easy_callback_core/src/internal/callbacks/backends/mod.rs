@@ -15,3 +15,6 @@ pub mod rmp;
 
 #[cfg(feature = "ciborium")]
 pub mod ciborium;
+
+#[cfg(feature = "borsh")]
+pub mod borsh;

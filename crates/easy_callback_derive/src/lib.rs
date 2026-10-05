@@ -52,3 +52,11 @@ derive_callback! {
         serde::Deserialize,
     ],
 }
+
+#[cfg(feature = "borsh")]
+derive_callback! {
+    borsh => [
+        borsh::BorshSerialize,
+        borsh::BorshDeserialize,
+    ],
+}

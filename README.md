@@ -78,6 +78,7 @@ Available implementations:
 * [bitcode](https://crates.io/crates/bitcode)
 * [rmp](https://crates.io/crates/rmp-serde)
 * [ciborium](https://crates.io/crates/ciborium)
+* [borsh](https://crates.io/crates/borsh)
 
 Multiple implementations can be enabled simultaneously if required.
 

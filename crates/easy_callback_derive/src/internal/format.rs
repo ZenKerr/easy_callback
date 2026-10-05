@@ -42,4 +42,5 @@ enum_format! {
     Bitcode,
     Rmp,
     Ciborium,
+    Borsh,
 }

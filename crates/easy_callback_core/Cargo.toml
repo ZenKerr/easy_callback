@@ -28,6 +28,7 @@ postcard = { workspace = true, features = ["use-std"], optional = true }
 bitcode = { workspace = true, optional = true }
 rmp-serde = { workspace = true, optional = true }
 ciborium = { workspace = true, optional = true }
+borsh = { workspace = true, optional = true }
 
 [features]
 _any_feature = ["dep:base64"]
@@ -56,5 +57,9 @@ rmp = [
 ciborium = [
     "dep:ciborium",
     "dep:serde",
+    "_any_feature",
+]
+borsh = [
+    "dep:borsh",
     "_any_feature",
 ]

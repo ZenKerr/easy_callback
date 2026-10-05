@@ -10,6 +10,7 @@ serde = { workspace = true }
 rkyv = { workspace = true }
 wincode = { workspace = true, features = ["derive"] }
 bitcode = { workspace = true, features = ["derive"] }
+borsh = { workspace = true, features = ["derive"] }
 easy_callback = { path = "../../", features = [
     "rkyv",
     "wincode",
@@ -17,4 +18,5 @@ easy_callback = { path = "../../", features = [
     "bitcode",
     "rmp",
     "ciborium",
+    "borsh",
 ] }
