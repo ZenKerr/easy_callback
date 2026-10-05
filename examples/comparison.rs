@@ -1,10 +1,8 @@
-use easy_callback::{
-    core::AbstractCallback,
-    derive::{
-        BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback,
-        RmpCallback, WincodeCallback,
-    },
+use easy_callback::derive::{
+    BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
+    WincodeCallback,
 };
+use easy_callback_core::AbstractCallback;
 
 // Example demonstrating a comparison of different encoding
 // implementations by the size of their encoded output.

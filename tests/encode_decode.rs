@@ -1,4 +1,4 @@
-use easy_callback_derive::{
+use easy_callback::derive::{
     BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
     WincodeCallback,
 };
