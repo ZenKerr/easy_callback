@@ -60,3 +60,11 @@ derive_callback! {
         borsh::BorshDeserialize,
     ],
 }
+
+#[cfg(feature = "speedy")]
+derive_callback! {
+    speedy => [
+        speedy::Writable,
+        speedy::Readable,
+    ],
+}

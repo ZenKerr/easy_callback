@@ -43,4 +43,5 @@ enum_format! {
     Rmp,
     Ciborium,
     Borsh,
+    Speedy,
 }

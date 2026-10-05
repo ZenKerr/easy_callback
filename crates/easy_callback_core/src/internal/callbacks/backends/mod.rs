@@ -18,3 +18,6 @@ pub mod ciborium;
 
 #[cfg(feature = "borsh")]
 pub mod borsh;
+
+#[cfg(feature = "speedy")]
+pub mod speedy;

@@ -1,6 +1,6 @@
 use easy_callback::derive::{
     BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
-    WincodeCallback,
+    SpeedyCallback, WincodeCallback,
 };
 use teloxide::types::{CallbackQuery, CallbackQueryId, User, UserId};
 
@@ -80,3 +80,4 @@ check_implementation!(
         BorshCallback,
     ],
 );
+check_implementation!(speedy, [speedy::Writable, speedy::Readable, SpeedyCallback]);

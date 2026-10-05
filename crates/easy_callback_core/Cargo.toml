@@ -29,6 +29,7 @@ bitcode = { workspace = true, optional = true }
 rmp-serde = { workspace = true, optional = true }
 ciborium = { workspace = true, optional = true }
 borsh = { workspace = true, optional = true }
+speedy = { workspace = true, optional = true }
 
 [features]
 _any_feature = ["dep:base64"]
@@ -61,5 +62,9 @@ ciborium = [
 ]
 borsh = [
     "dep:borsh",
+    "_any_feature",
+]
+speedy = [
+    "dep:speedy",
     "_any_feature",
 ]

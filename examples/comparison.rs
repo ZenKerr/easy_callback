@@ -1,6 +1,6 @@
 use easy_callback::derive::{
     BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
-    WincodeCallback,
+    SpeedyCallback, WincodeCallback,
 };
 use easy_callback_core::AbstractCallback;
 
@@ -85,7 +85,8 @@ fn main() {
         [
             borsh::BorshSerialize,
             borsh::BorshDeserialize,
-            BorshCallback
+            BorshCallback,
         ],
     );
+    implementation!(speedy, [speedy::Writable, speedy::Readable, SpeedyCallback]);
 }

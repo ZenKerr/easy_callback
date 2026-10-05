@@ -79,6 +79,7 @@ Available implementations:
 * [rmp](https://crates.io/crates/rmp-serde)
 * [ciborium](https://crates.io/crates/ciborium)
 * [borsh](https://crates.io/crates/borsh)
+* [speedy](https://crates.io/crates/speedy)
 
 Multiple implementations can be enabled simultaneously if required.
 
