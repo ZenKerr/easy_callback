@@ -27,7 +27,7 @@ easy_callback_core = { workspace = true }
 
 [dev-dependencies]
 tokio = { workspace = true, features = ["macros"] }
-teloxide = { workspace = true, features = ["ctrlc_handler", "macros"] }
+teloxide = { workspace = true, features = ["native-tls", "ctrlc_handler", "macros"] }
 serde = { workspace = true }
 rkyv = { workspace = true }
 wincode = { workspace = true, features = ["derive"] }
