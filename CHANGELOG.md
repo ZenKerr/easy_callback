@@ -1,3 +1,7 @@
+## 1.3.0
+
+* Added `oxicode` implementation
+
 ## 1.2.0
 
 * Added `speedy` implementation
