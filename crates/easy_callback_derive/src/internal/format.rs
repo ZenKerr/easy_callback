@@ -44,4 +44,5 @@ enum_format! {
     Ciborium,
     Borsh,
     Speedy,
+    Oxicode,
 }

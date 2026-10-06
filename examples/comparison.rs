@@ -1,6 +1,6 @@
 use easy_callback::derive::{
-    BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
-    SpeedyCallback, WincodeCallback,
+    BitcodeCallback, BorshCallback, CiboriumCallback, OxicodeCallback, PostcardCallback,
+    RkyvCallback, RmpCallback, SpeedyCallback, WincodeCallback,
 };
 use easy_callback_core::AbstractCallback;
 
@@ -89,4 +89,5 @@ fn main() {
         ],
     );
     implementation!(speedy, [speedy::Writable, speedy::Readable, SpeedyCallback]);
+    implementation!(oxicode, [oxicode::Encode, oxicode::Decode, OxicodeCallback]);
 }

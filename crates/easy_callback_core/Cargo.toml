@@ -30,6 +30,7 @@ rmp-serde = { workspace = true, optional = true }
 ciborium = { workspace = true, optional = true }
 borsh = { workspace = true, optional = true }
 speedy = { workspace = true, optional = true }
+oxicode = { workspace = true, features = ["alloc"], optional = true }
 
 [features]
 _any_feature = ["dep:base64"]
@@ -66,5 +67,9 @@ borsh = [
 ]
 speedy = [
     "dep:speedy",
+    "_any_feature",
+]
+oxicode = [
+    "dep:oxicode",
     "_any_feature",
 ]

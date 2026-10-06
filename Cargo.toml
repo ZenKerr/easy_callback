@@ -34,6 +34,7 @@ wincode = { workspace = true, features = ["derive"] }
 bitcode = { workspace = true, features = ["derive"] }
 borsh = { workspace = true, features = ["derive"] }
 speedy = { workspace = true, features = ["speedy-derive"] }
+oxicode = { workspace = true, features = ["derive"] }
 easy_callback = { path = ".", features = [
     "rkyv",
     "wincode",
@@ -43,6 +44,7 @@ easy_callback = { path = ".", features = [
     "ciborium",
     "borsh",
     "speedy",
+    "oxicode",
 ] }
 
 [features]
@@ -77,6 +79,10 @@ borsh = [
 speedy = [
     "easy_callback_derive/speedy",
     "easy_callback_core/speedy",
+]
+oxicode = [
+    "easy_callback_derive/oxicode",
+    "easy_callback_core/oxicode",
 ]
 
 [workspace]
@@ -113,5 +119,6 @@ rmp-serde = { version = "1.3.1", default-features = false }
 ciborium = { version = "0.2.2", default-features = false }
 borsh = { version = "1.8.1", default-features = false }
 speedy = { version = "0.8.7", default-features = false }
+oxicode = { version = "0.2.6", default-features = false }
 easy_callback_derive = { version = "1.2.0", path = "crates/easy_callback_derive" }
 easy_callback_core = { version = "1.2.0", path = "crates/easy_callback_core" }

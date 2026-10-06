@@ -21,3 +21,6 @@ pub mod borsh;
 
 #[cfg(feature = "speedy")]
 pub mod speedy;
+
+#[cfg(feature = "oxicode")]
+pub mod oxicode;

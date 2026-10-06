@@ -90,6 +90,7 @@ Available implementations:
 * [ciborium](https://crates.io/crates/ciborium)
 * [borsh](https://crates.io/crates/borsh)
 * [speedy](https://crates.io/crates/speedy)
+* [oxicode](https://crates.io/crates/oxicode)
 
 Multiple implementations can be enabled simultaneously if required.
 
@@ -128,6 +129,7 @@ The results below are measured in bytes after Base64 encoding:
 | ciborium       | 35          | 12            |
 | borsh          | 18          | 2             |
 | speedy         | 22          | 6             |
+| oxicode        | 11          | 2             |
 
 ---
 

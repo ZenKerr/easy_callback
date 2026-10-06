@@ -68,3 +68,11 @@ derive_callback! {
         speedy::Readable,
     ],
 }
+
+#[cfg(feature = "oxicode")]
+derive_callback! {
+    oxicode => [
+        oxicode::Encode,
+        oxicode::Decode,
+    ],
+}

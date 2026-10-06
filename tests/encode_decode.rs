@@ -1,6 +1,6 @@
 use easy_callback::derive::{
-    BitcodeCallback, BorshCallback, CiboriumCallback, PostcardCallback, RkyvCallback, RmpCallback,
-    SpeedyCallback, WincodeCallback,
+    BitcodeCallback, BorshCallback, CiboriumCallback, OxicodeCallback, PostcardCallback,
+    RkyvCallback, RmpCallback, SpeedyCallback, WincodeCallback,
 };
 use teloxide::types::{CallbackQuery, CallbackQueryId, User, UserId};
 
@@ -81,3 +81,4 @@ check_implementation!(
     ],
 );
 check_implementation!(speedy, [speedy::Writable, speedy::Readable, SpeedyCallback]);
+check_implementation!(oxicode, [oxicode::Encode, oxicode::Decode, OxicodeCallback]);
